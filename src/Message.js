@@ -10,7 +10,7 @@ const Message = forwardRef(({ message, username }, ref) => {
       <Card className={isUser ? "message__userCard" : "message__guestCard"}>
         <CardContent>
           <Typography color='white' component='h2' variant='h5'>
-            {message.username}: {message.message}
+            {!isUser && `${message.username}:`} {message.message}
           </Typography>
         </CardContent>
       </Card>

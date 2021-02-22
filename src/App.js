@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Button, FormControl, Input, InputLabel } from "@material-ui/core";
+import {
+  Button,
+  FormControl,
+  Input,
+  InputLabel,
+  IconButton,
+} from "@material-ui/core";
 import "./App.css";
 import Message from "./Message";
 import db from "./firebase";
 import firebase from "firebase";
 import FlipMove from "react-flip-move";
+import { Send } from "@material-ui/icons";
 
 const tijd = "2.01.14";
 
@@ -39,24 +46,25 @@ function App() {
 
   return (
     <div className='App'>
+      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Messenger_logo_2018.svg/1200px-Facebook_Messenger_logo_2018.svg.png' />
       <h1>Facebook messager</h1>
       <h2>Welcome {username}</h2>
-      <form>
-        <FormControl>
-          <InputLabel>Enter a message</InputLabel>
+      <form className='app__form'>
+        <FormControl className='app__formControl'>
           <Input
+            placeholder='Enter a message...'
             value={input}
             onChange={(event) => setInput(event.target.value)}
           />
-          <Button
+          <IconButton
             variant='contained'
             color='primary'
             onClick={sendMessage}
             type='submit'
             disabled={!input}
           >
-            Send message
-          </Button>
+            <Send />
+          </IconButton>
         </FormControl>
       </form>
       <FlipMove>
