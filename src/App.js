@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from "react";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputLabel,
-  IconButton,
-} from "@material-ui/core";
+import { FormControl, Input, IconButton } from "@material-ui/core";
 import "./App.css";
 import Message from "./Message";
 import db from "./firebase";
 import firebase from "firebase";
 import FlipMove from "react-flip-move";
 import { Send } from "@material-ui/icons";
-
-const tijd = "2.01.14";
 
 function App() {
   const [input, setInput] = useState("");
@@ -52,11 +44,13 @@ function App() {
       <form className='app__form'>
         <FormControl className='app__formControl'>
           <Input
+            className='app__input'
             placeholder='Enter a message...'
             value={input}
             onChange={(event) => setInput(event.target.value)}
           />
           <IconButton
+            className='app__iconButton'
             variant='contained'
             color='primary'
             onClick={sendMessage}

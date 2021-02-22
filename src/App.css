@@ -21,3 +21,11 @@
   display: flex !important;
   flex-direction: row !important;
 }
+
+.app__input {
+  flex: 0.9;
+}
+
+.app__iconButton {
+  flex: 0;
+}
